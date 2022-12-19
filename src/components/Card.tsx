@@ -13,6 +13,7 @@ export default function Card({ name, color, onClickAction, value }: CardProps) {
             className={'Card ' + name}
             data-color={color}
             onClick={(e) => onClickAction()} >
+            <span>{name}</span>
             <div>
                 {value}
             </div>
