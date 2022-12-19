@@ -1,0 +1,25 @@
+.Card {
+    width: 100px;
+    height: 150px;
+    position: relative;
+    border: none;
+    padding: 0;
+    background: green;
+}
+
+.Card[data-color="red"] {
+    background: red;
+}
+
+.Card > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
