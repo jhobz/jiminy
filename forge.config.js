@@ -40,4 +40,17 @@ module.exports = {
       },
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'jhobz',
+          name: 'jiminy',
+        },
+        prerelease: true,
+        draft: true,
+      }
+    }
+  ]
 };

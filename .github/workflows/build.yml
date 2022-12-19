@@ -1,9 +1,11 @@
-name: Build/release
+name: Build & Release
 
 on:
   push:
     branches:
-    - main
+      - main
+    tags:
+      - v*
 
 jobs:
   release:
@@ -21,14 +23,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18
-
-      - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
+      - name: Electron Forge Action
+        # You may pin to the exact commit or the version.
+        # uses: yinxulai/actions-electron-forge@456a6517c5241e4d693507b99a30dac8fe622102
+        uses: yinxulai/actions-electron-forge@0.05
         with:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
-
-          # If the commit is tagged with a version (e.g. "v1.0.0"),
-          # release the app after building
+          # Directory where NPM/Yarn commands should be run
+          package_root: # optional, default is .
+          # Optional package.json scripts name
+          script_name: # optional, default is publish
+          # Whether the app should be released after a successful build
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
