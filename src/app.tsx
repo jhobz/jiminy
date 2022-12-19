@@ -23,7 +23,7 @@ const App = () => (
                 {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
                 {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
                 {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
-                ]} />
+            ]} />
     </div>
 )
 
