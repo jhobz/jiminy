@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Install Node.js, NPM and Yarn
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Electron Forge Action
@@ -32,7 +32,7 @@ jobs:
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
           # Directory where NPM/Yarn commands should be run
-          package_root: # optional, default is .
+          package_root: .
           # Optional package.json scripts name
           script_name: # optional, default is publish
           # Whether the app should be released after a successful build
