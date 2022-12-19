@@ -4,11 +4,16 @@
     position: relative;
     border: none;
     padding: 0;
-    background: green;
+    background: transparent;
 }
 
 .Card[data-color="red"] {
     background: red;
+}
+
+.Card.teeming {
+    background-image: url('../assets/map_cards/teeming.webp');
+    background-size: 100% 100%;
 }
 
 .Card > div {
@@ -22,4 +27,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Card > span {
+    color: white;
 }
