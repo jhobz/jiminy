@@ -12,12 +12,27 @@
 }
 
 .Card.teeming {
-    background-image: url('../assets/map_cards/teeming.webp');
+    background-image: url('../assets/map_cards/Red/teeming.webp');
     background-size: 100% 100%;
 }
 
 .Card.tranquil {
-    background-image: url('../assets/map_cards/tranquil.webp');
+    background-image: url('../assets/map_cards/Red/tranquil.webp');
+    background-size: 100% 100%;
+}
+
+.Card.feeble {
+    background-image: url('../assets/map_cards/Red/feeble.webp');
+    background-size: 100% 100%;
+}
+
+.Card.almighty {
+    background-image: url('../assets/map_cards/Red/almighty.webp');
+    background-size: 100% 100%;
+}
+
+.Card.sleeping {
+    background-image: url('../assets/map_cards/Red/sleeping.webp');
     background-size: 100% 100%;
 }
 

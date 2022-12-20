@@ -21,7 +21,8 @@ const App = () => (
             cards={[
                 {name: 'teeming', color: 'red', value: 4, onClickAction: () => console.log('teeming')},
                 {name: 'tranquil', color: 'red', value: 2, onClickAction: () => console.log('tranquil')},
-                {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
+                {name: 'feeble', color: 'red', value: 2, onClickAction: () => console.log('feeble')},
+                {name: 'almighty', color: 'red', value: 2, onClickAction: () => console.log('almighty')},
                 {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
             ]} />
     </div>
