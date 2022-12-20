@@ -11,6 +11,46 @@
     background: red;
 }
 
+.Card.almighty {
+    background-image: url('../assets/map_cards/Red/almighty.webp');
+    background-size: 100% 100%;
+}
+
+.Card.blackroom {
+    background-image: url('../assets/map_cards/Red/blackroom.webp');
+    background-size: 100% 100%;
+}
+
+.Card.bottomless {
+    background-image: url('../assets/map_cards/Red/bottomless.webp');
+    background-size: 100% 100%;
+}
+
+.Card.feeble {
+    background-image: url('../assets/map_cards/Red/feeble.webp');
+    background-size: 100% 100%;
+}
+
+.Card.looming {
+    background-image: url('../assets/map_cards/Red/looming.webp');
+    background-size: 100% 100%;
+}
+
+.Card.premium {
+    background-image: url('../assets/map_cards/Red/premium.webp');
+    background-size: 100% 100%;
+}
+
+.Card.roulette {
+    background-image: url('../assets/map_cards/Red/roulette.webp');
+    background-size: 100% 100%;
+}
+
+.Card.sleeping {
+    background-image: url('../assets/map_cards/Red/sleeping.webp');
+    background-size: 100% 100%;
+}
+
 .Card.teeming {
     background-image: url('../assets/map_cards/Red/teeming.webp');
     background-size: 100% 100%;
@@ -21,18 +61,8 @@
     background-size: 100% 100%;
 }
 
-.Card.feeble {
-    background-image: url('../assets/map_cards/Red/feeble.webp');
-    background-size: 100% 100%;
-}
-
-.Card.almighty {
-    background-image: url('../assets/map_cards/Red/almighty.webp');
-    background-size: 100% 100%;
-}
-
-.Card.sleeping {
-    background-image: url('../assets/map_cards/Red/sleeping.webp');
+.Card.whiteroom {
+    background-image: url('../assets/map_cards/Red/whiteroom.webp');
     background-size: 100% 100%;
 }
 
