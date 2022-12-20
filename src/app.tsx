@@ -20,7 +20,7 @@ const App = () => (
         <CardContainer
             cards={[
                 {name: 'teeming', color: 'red', value: 4, onClickAction: () => console.log('teeming')},
-                {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
+                {name: 'tranquil', color: 'red', value: 2, onClickAction: () => console.log('tranquil')},
                 {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
                 {name: 'sleeping', color: 'red', value: 2, onClickAction: () => console.log('sleeping')},
             ]} />
