@@ -3,12 +3,13 @@
     height: 150px;
     position: relative;
     border: none;
-    padding: 0;
+    padding: 25px;
     background: transparent;
 }
 
 .Card[data-color="red"] {
     background: red;
+    margin: 5px;
 }
 
 .Card.almighty {
@@ -68,9 +69,8 @@
 
 .Card > div {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: blue;
+    bottom: 10px;
+    right: 10px;
     width: 30px;
     height: 30px;
     color: white;
