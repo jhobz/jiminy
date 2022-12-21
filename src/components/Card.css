@@ -3,69 +3,29 @@
     height: 150px;
     position: relative;
     border: none;
-    padding: 25px;
+    padding: 0;
     background: transparent;
+    min-width: 100px;
+    margin: 10px;
 }
 
 .Card[data-color="red"] {
     background: red;
-    margin: 5px;
-}
-
-.Card.almighty {
-    background-image: url('../assets/map_cards/Red/almighty.webp');
     background-size: 100% 100%;
 }
 
-.Card.blackroom {
-    background-image: url('../assets/map_cards/Red/blackroom.webp');
-    background-size: 100% 100%;
-}
-
-.Card.bottomless {
-    background-image: url('../assets/map_cards/Red/bottomless.webp');
-    background-size: 100% 100%;
-}
-
-.Card.feeble {
-    background-image: url('../assets/map_cards/Red/feeble.webp');
-    background-size: 100% 100%;
-}
-
-.Card.looming {
-    background-image: url('../assets/map_cards/Red/looming.webp');
-    background-size: 100% 100%;
-}
-
-.Card.premium {
-    background-image: url('../assets/map_cards/Red/premium.webp');
-    background-size: 100% 100%;
-}
-
-.Card.roulette {
-    background-image: url('../assets/map_cards/Red/roulette.webp');
-    background-size: 100% 100%;
-}
-
-.Card.sleeping {
-    background-image: url('../assets/map_cards/Red/sleeping.webp');
-    background-size: 100% 100%;
-}
-
-.Card.teeming {
-    background-image: url('../assets/map_cards/Red/teeming.webp');
-    background-size: 100% 100%;
-}
-
-.Card.tranquil {
-    background-image: url('../assets/map_cards/Red/tranquil.webp');
-    background-size: 100% 100%;
-}
-
-.Card.whiteroom {
-    background-image: url('../assets/map_cards/Red/whiteroom.webp');
-    background-size: 100% 100%;
-}
+/* -- RED CARDS -- */
+.Card.almighty {background-image: url('../assets/map_cards/Red/almighty.webp');}
+.Card.blackroom {background-image: url('../assets/map_cards/Red/blackroom.webp');}
+.Card.bottomless {background-image: url('../assets/map_cards/Red/bottomless.webp');}
+.Card.feeble {background-image: url('../assets/map_cards/Red/feeble.webp');}
+.Card.looming {background-image: url('../assets/map_cards/Red/looming.webp');}
+.Card.premium {background-image: url('../assets/map_cards/Red/premium.webp');}
+.Card.roulette {background-image: url('../assets/map_cards/Red/roulette.webp');}
+.Card.sleeping {background-image: url('../assets/map_cards/Red/sleeping.webp');}
+.Card.teeming {background-image: url('../assets/map_cards/Red/teeming.webp');}
+.Card.tranquil {background-image: url('../assets/map_cards/Red/tranquil.webp');}
+.Card.whiteroom {background-image: url('../assets/map_cards/Red/whiteroom.webp');}
 
 .Card > div {
     position: absolute;
@@ -73,12 +33,12 @@
     right: 10px;
     width: 30px;
     height: 30px;
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .Card > span {
-    color: white;
+    color: rgb(255, 255, 255);
 }
