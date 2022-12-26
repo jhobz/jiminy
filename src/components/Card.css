@@ -65,3 +65,14 @@
 .Card.sorcerous { background-image: url('../assets/map_cards/Green/sorcerous.webp'); }
 .Card.stagnant  { background-image: url('../assets/map_cards/Green/stagnant.webp'); }
 .Card.strong    { background-image: url('../assets/map_cards/Green/strong.webp'); }
+
+/* -- BLUE CARDS -- */
+.Card.calm      { background-image: url('../assets/map_cards/Blue/calm.webp'); }
+.Card.false     { background-image: url('../assets/map_cards/Blue/false.webp'); }
+.Card.guarded   { background-image: url('../assets/map_cards/Blue/guarded.webp'); }
+.Card.mingling  { background-image: url('../assets/map_cards/Blue/mingling.webp'); }
+.Card.moments   { background-image: url('../assets/map_cards/Blue/moments.webp'); }
+.Card.moogle    { background-image: url('../assets/map_cards/Blue/moogle.webp'); }
+
+/* -- OTHER CARDS -- */
+.Card.joker     { background-image: url('../assets/map_cards/other/joker.webp'); }

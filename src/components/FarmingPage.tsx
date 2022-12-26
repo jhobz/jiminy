@@ -39,8 +39,11 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         { name: 'strong', color: 'green' },
     ]
     const BLUE_CARDS: CardProps[] = [
-        { name: 'reprieve', color: 'blue' },
-        { name: 'bounty', color: 'blue' },
+        { name: 'calm', color: 'blue' },
+        { name: 'false', color: 'blue' },
+        { name: 'guarded', color: 'blue' },
+        { name: 'mingling', color: 'blue' },
+        { name: 'moments', color: 'blue' },
         { name: 'moogle', color: 'blue' },
     ]
     const OTHER_CARDS: CardProps[] = [
