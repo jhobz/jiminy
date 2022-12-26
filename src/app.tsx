@@ -5,7 +5,7 @@ import FarmingPage from './components/FarmingPage'
 import { CardProps } from './components/Card'
 
 const App = () => {
-    const [inventory, setInventory] = useState([])
+    const [inventory, setInventory] = useState([] as CardProps[])
 
     return (
         <div className="app-container">

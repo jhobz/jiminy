@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import CardContainer from './CardContainer'
 import { CardProps } from './Card'
 import './FarmingPage.css'
+import Goals from './Goals'
 
 interface PropTypes {
-    inventory: object[]
+    inventory: CardProps[]
     onInventoryChange: Function
 }
 
@@ -99,6 +100,7 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
 
     return (
     <div className="FarmingPage">
+        <Goals inventory={inventory} />
         <CardContainer
             activeIndex={activeColor}
             onActiveIndexChange={setActiveColor}

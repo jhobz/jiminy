@@ -1,0 +1,10 @@
+.goal {
+    background-color: maroon;
+    color: white;
+    margin-left: 1rem;
+}
+
+.goal[data-complete] {
+    background-color: lightgreen;
+    color: black;
+}
