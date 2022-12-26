@@ -99,9 +99,6 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
 
     return (
     <div className="FarmingPage">
-        <div>Color: {activeColor}</div>
-        <div>Card: {activeCard}</div>
-        <div>Value: {activeValue}</div>
         <CardContainer
             activeIndex={activeColor}
             onActiveIndexChange={setActiveColor}

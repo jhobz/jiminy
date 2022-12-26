@@ -8,14 +8,8 @@ const App = () => {
     const [inventory, setInventory] = useState([])
 
     return (
-        <div
-            style={{
-                height: '100vh',
-            }}
-        >
-            <h1>FARMING</h1>
+        <div className="app-container">
             <div>Inventory: {inventory.map((value) => value.name + ' ' + value.value).join(', ')}</div>
-            <br />
             <FarmingPage
                 inventory={inventory}
                 onInventoryChange={setInventory} />
