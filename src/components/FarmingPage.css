@@ -1,4 +1,9 @@
 .FarmingPage {
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.FarmingPage > .CardContainer {
+    box-sizing: border-box;
+    height: 33.3333%;
 }

@@ -1,13 +1,12 @@
 .Card {
-    width: 100px;
-    height: 150px;
+    aspect-ratio: 0.6667;
+    flex: 1 1 80px;
     position: relative;
     border: none;
-    padding: 0;
     background-color: transparent;
     background-size: 100% 100%;
-    min-width: 100px;
-    margin: 0 10px;
+    max-width: 124px;
+    margin: 0 0.25rem;
     color: rgb(255, 255, 255);
 }
 
