@@ -56,3 +56,12 @@
 .Card.teeming    { background-image: url('../assets/map_cards/Red/teeming.webp'); }
 .Card.tranquil   { background-image: url('../assets/map_cards/Red/tranquil.webp'); }
 .Card.whiteroom  { background-image: url('../assets/map_cards/Red/whiteroom.webp'); }
+
+/* -- GREEN CARDS -- */
+.Card.alchemic  { background-image: url('../assets/map_cards/Green/alchemic.webp'); }
+.Card.lasting   { background-image: url('../assets/map_cards/Green/lasting.webp'); }
+.Card.martial   { background-image: url('../assets/map_cards/Green/martial.webp'); }
+.Card.meeting   { background-image: url('../assets/map_cards/Green/meeting.webp'); }
+.Card.sorcerous { background-image: url('../assets/map_cards/Green/sorcerous.webp'); }
+.Card.stagnant  { background-image: url('../assets/map_cards/Green/stagnant.webp'); }
+.Card.strong    { background-image: url('../assets/map_cards/Green/strong.webp'); }
