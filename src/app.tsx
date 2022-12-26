@@ -14,6 +14,7 @@ const App = () => {
             }}
         >
             <h1>FARMING</h1>
+            <div>Inventory: {inventory.map((value) => value.name + ' ' + value.value).join(', ')}</div>
             <br />
             <FarmingPage
                 inventory={inventory}

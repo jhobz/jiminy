@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CardContainer from './CardContainer'
+import { CardProps } from './Card'
 import './FarmingPage.css'
 
 interface PropTypes {
@@ -9,13 +10,13 @@ interface PropTypes {
 
 export default function FarmingPage({ inventory, onInventoryChange }: PropTypes) {
     // ============ CARDS
-    const CARD_COLORS = [
+    const CARD_COLORS: CardProps[] = [
         { name: 'red', color: 'red' },
         { name: 'green', color: 'green' },
         { name: 'blue', color: 'blue' },
         { name: 'other', color: 'gray' },
     ]
-    const RED_CARDS = [
+    const RED_CARDS: CardProps[] = [
         { name: 'almighty', color: 'red' },
         { name: 'blackroom', color: 'red' },
         { name: 'bottomless', color: 'red' },
@@ -28,21 +29,21 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         { name: 'tranquil', color: 'red' },
         { name: 'whiteroom', color: 'red' },
     ]
-    const GREEN_CARDS = [
+    const GREEN_CARDS: CardProps[] = [
         { name: 'daze', color: 'green' },
         { name: 'something', color: 'green' },
         { name: 'idk', color: 'green' },
         { name: 'who knows', color: 'green' },
     ]
-    const BLUE_CARDS = [
+    const BLUE_CARDS: CardProps[] = [
         { name: 'reprieve', color: 'blue' },
         { name: 'bounty', color: 'blue' },
         { name: 'moogle', color: 'blue' },
     ]
-    const OTHER_CARDS = [
+    const OTHER_CARDS: CardProps[] = [
         { name: 'joker', color: 'gray' },
     ]
-    const CARD_VALUES = [
+    const CARD_VALUES: CardProps[] = [
         { name: '0', color: 'red', frame: false, value: 0 },
         { name: '1', color: 'red', frame: false, value: 1 },
         { name: '2', color: 'red', frame: false, value: 2 },
@@ -66,14 +67,26 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         setActiveValue(-1)
     }
 
+    // append card to top-level app inventory
     useEffect(() => {
-        // append card to top-level app inventory
+        // Random Joker
         if (activeColor === 3 && activeCard === 0) {
-            // append RJ
+            onInventoryChange(inventory.concat([OTHER_CARDS[0]]))
             resetState()
         }
         else if (activeValue >= 0) {
-            // append other card
+            let newCard
+            if (activeColor === 0) {
+                newCard = { ...RED_CARDS[activeCard] }
+            }
+            else if (activeColor === 1) {
+                newCard = { ...GREEN_CARDS[activeCard] }
+            }
+            else if (activeColor === 2) {
+                newCard = { ...BLUE_CARDS[activeCard] }
+            }
+            newCard.value = activeValue
+            onInventoryChange(inventory.concat([newCard]))
             resetState()
         }
     }, [activeCard, activeValue])
