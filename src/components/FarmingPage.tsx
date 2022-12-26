@@ -70,7 +70,6 @@ export default function FarmingPage() {
             activeIndex={activeCard}
             onActiveIndexChange={setActiveCard}
             cards={[
-                { name: 'enemy', color: 'gray' },
                 { name: 'random joker', color: 'gray' },
             ]} />) }
 
