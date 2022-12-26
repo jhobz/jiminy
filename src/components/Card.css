@@ -7,7 +7,41 @@
     background-color: transparent;
     background-size: 100% 100%;
     min-width: 100px;
-    margin: 10px;
+    margin: 0 10px;
+    color: rgb(255, 255, 255);
+}
+
+.Card > .card-value {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Card[data-frame="true"].Card[data-color="red"] {
+    background-color: red;
+}
+.Card[data-frame="true"].Card[data-color="green"] {
+    background-color: green;
+}
+.Card[data-frame="true"].Card[data-color="blue"] {
+    background-color: blue;
+}
+.Card[data-frame="true"].Card[data-color="gray"] {
+    background-color: gray;
+}
+
+.Card[data-frame="false"] {
+    background-color: transparent;
+    color: black;
+}
+
+.Card[data-frame="false"] > .card-value {
+    display: none;
 }
 
 /* -- RED CARDS -- */
@@ -22,19 +56,3 @@
 .Card.teeming    { background-image: url('../assets/map_cards/Red/teeming.webp'); }
 .Card.tranquil   { background-image: url('../assets/map_cards/Red/tranquil.webp'); }
 .Card.whiteroom  { background-image: url('../assets/map_cards/Red/whiteroom.webp'); }
-
-.Card > div {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Card > span {
-    color: rgb(255, 255, 255);
-}

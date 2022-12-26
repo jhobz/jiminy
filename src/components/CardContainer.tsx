@@ -9,10 +9,7 @@ export default function CardContainer({ cards }: PropTypes) {
   const listItems = cards.map((card, index) =>
     <Card
         key={index}
-        name={card.name}
-        color={card.color}
-        onClickAction={card.onClickAction}
-        value={card.value} />
+        {...card} />
   )
 
   return (
