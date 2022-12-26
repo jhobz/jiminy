@@ -30,10 +30,13 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         { name: 'whiteroom', color: 'red' },
     ]
     const GREEN_CARDS: CardProps[] = [
-        { name: 'daze', color: 'green' },
-        { name: 'something', color: 'green' },
-        { name: 'idk', color: 'green' },
-        { name: 'who knows', color: 'green' },
+        { name: 'alchemic', color: 'green' },
+        { name: 'lasting', color: 'green' },
+        { name: 'martial', color: 'green' },
+        { name: 'meeting', color: 'green' },
+        { name: 'sorcerous', color: 'green' },
+        { name: 'stagnant', color: 'green' },
+        { name: 'strong', color: 'green' },
     ]
     const BLUE_CARDS: CardProps[] = [
         { name: 'reprieve', color: 'blue' },
