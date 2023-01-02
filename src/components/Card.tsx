@@ -1,9 +1,9 @@
 import './Card.css'
 
 export interface CardProps {
-    name: 'almighty' | 'blackroom' | 'bottomless' | 'feeble'    | 'looming'  | 'premium' | 'roulette'| 
-          'sleeping' | 'teeming'   | 'trainquil'  | 'whiteroom' | 'alchemic' | 'lasting' | 'martial' | 
-          'meeting'  | 'sorcerous' | 'stagnant'   | 'strong'    | 'calm'     | 'false'   | 'guarded' | 
+    name: 'almighty' | 'blackroom' | 'bottomless' | 'feeble'    | 'looming'  | 'premium' | 'roulette' | 
+          'sleeping' | 'teeming'   | 'trainquil'  | 'whiteroom' | 'alchemic' | 'lasting' | 'martial'  | 
+          'meeting'  | 'sorcerous' | 'stagnant'   | 'strong'    | 'calm'     | 'false'   | 'guarded'  | 
           'mingling' | 'moments'   | 'moogle'     | 'joker'
     color: 'red' | 'green' | 'blue' | 'gray'
     onClick?: Function
