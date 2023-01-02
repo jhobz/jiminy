@@ -1,12 +1,10 @@
 .Card {
     aspect-ratio: 0.6667;
-    flex: 1 1 80px;
     position: relative;
     border: none;
     background-color: transparent;
     background-size: 100% 100%;
-    /* max-width: 124px; */
-    /* margin: 0 0.25rem; */
+    margin: auto 0;
     color: rgb(255, 255, 255);
 }
 

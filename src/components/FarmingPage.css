@@ -11,6 +11,10 @@
     gap: 1em;
 }
 
+.card-container-grid > .CardContainer:first-child {
+    --grid-column-count: 4
+}
+
 .card-container-grid > .CardContainer:last-child {
     visibility: hidden;
 }
