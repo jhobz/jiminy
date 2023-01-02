@@ -105,19 +105,26 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
     const [activeCard, setActiveCard] = useState(-1)
     const [activeValue, setActiveValue] = useState(-1)
 
+    const gridContainer = document.querySelector('.card-container-grid')
+
     const resetState = () => {
         setActiveColor(-1)
         setActiveCard(-1)
         setActiveValue(-1)
+        gridContainer.classList.remove('showNumbers')
     }
+
     // append card to top-level app inventory
     useEffect(() => {
         // Random Joker
         if (activeColor === 3 && activeCard === 0) {
             onInventoryChange(inventory.concat([OTHER_CARDS[0]]))
             resetState()
+            return
         }
-        else if (activeValue >= 0) {
+
+        // Add a card to inventory when number is clicked
+        if (activeValue >= 0) {
             let newCard
             if (activeColor === 0) {
                 newCard = { ...RED_CARDS[activeCard] }
@@ -140,42 +147,50 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
                     }))
 
             resetState()
+            return
+        }
+
+        // Show the numbers when a card type is clicked
+        if (activeCard >= 0 && !gridContainer.classList.contains('showNumbers')) {
+            gridContainer.classList.add('showNumbers')
         }
     }, [activeCard, activeValue])
 
     return (
-    <div className="FarmingPage">
-        <Link to='/'>{'< '}Back</Link>
-        <h1>Farming</h1>
-        <Goals inventory={inventory} />
-        <CardContainer
-            activeIndex={activeColor}
-            onActiveIndexChange={setActiveColor}
-            cards={ CARD_COLORS } />
+        <div className="FarmingPage">
+            <Link to='/'>{'< '}Back</Link>
+            <h1>Farming</h1>
+            <Goals inventory={inventory} />
+            <div className="card-container-grid">
+                <CardContainer
+                    activeIndex={activeColor}
+                    onActiveIndexChange={setActiveColor}
+                    cards={ CARD_COLORS } />
 
-        {/* Card types */}
-        { activeColor === 0 && (<CardContainer
-            activeIndex={activeCard}
-            onActiveIndexChange={setActiveCard}
-            cards={ RED_CARDS } />) }
-        { activeColor === 1 && (<CardContainer
-            activeIndex={activeCard}
-            onActiveIndexChange={setActiveCard}
-            cards={ GREEN_CARDS } />) }
-        { activeColor === 2 && (<CardContainer
-            activeIndex={activeCard}
-            onActiveIndexChange={setActiveCard}
-            cards={ BLUE_CARDS } />) }
-        { activeColor === 3 && (<CardContainer
-            activeIndex={activeCard}
-            onActiveIndexChange={setActiveCard}
-            cards={ OTHER_CARDS } />) }
+                {/* Card types */}
+                { activeColor === 0 && (<CardContainer
+                    activeIndex={activeCard}
+                    onActiveIndexChange={setActiveCard}
+                    cards={ RED_CARDS } />) }
+                { activeColor === 1 && (<CardContainer
+                    activeIndex={activeCard}
+                    onActiveIndexChange={setActiveCard}
+                    cards={ GREEN_CARDS } />) }
+                { activeColor === 2 && (<CardContainer
+                    activeIndex={activeCard}
+                    onActiveIndexChange={setActiveCard}
+                    cards={ BLUE_CARDS } />) }
+                { activeColor === 3 && (<CardContainer
+                    activeIndex={activeCard}
+                    onActiveIndexChange={setActiveCard}
+                    cards={ OTHER_CARDS } />) }
 
-        {/* Card values */}
-        { activeCard >= 0 && activeColor < 3 && (<CardContainer
-            activeIndex={activeValue}
-            onActiveIndexChange={setActiveValue}
-            cards={ CARD_VALUES } />) }
-    </div>
+                {/* Card values */}
+                <CardContainer
+                    activeIndex={activeValue}
+                    onActiveIndexChange={setActiveValue}
+                    cards={ CARD_VALUES } />
+            </div>
+        </div>
     )
 }

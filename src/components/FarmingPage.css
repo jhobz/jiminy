@@ -1,9 +1,24 @@
 .FarmingPage {
+    display: grid;
+    grid-template-rows: min-content min-content min-content 1fr;
     height: 100%;
     overflow: hidden;
 }
 
-.FarmingPage > .CardContainer {
-    box-sizing: border-box;
-    height: 33.3333%;
+.FarmingPage > .card-container-grid {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    gap: 1em;
+}
+
+.card-container-grid > .CardContainer:first-child {
+    --grid-column-count: 4
+}
+
+.card-container-grid > .CardContainer:last-child {
+    visibility: hidden;
+}
+
+.showNumbers > .CardContainer:last-child {
+    visibility: visible;
 }
