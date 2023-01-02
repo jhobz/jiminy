@@ -9,8 +9,6 @@ interface PropTypes {
 }
 
 export default function InventoryPage({ inventory, onInventoryChange }: PropTypes) {
-    // inventory.sort((a, b) => )
-
     // remove card from top-level app inventory
     const onClick = (index: number) => {
         onInventoryChange(inventory.filter((_, i) => i !== index))

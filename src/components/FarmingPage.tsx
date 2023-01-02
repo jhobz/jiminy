@@ -63,6 +63,12 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         { name: '8', color: 'red', frame: false, value: 8 },
         { name: '9', color: 'red', frame: false, value: 9 },
     ]
+    const SORT_ORDER = {
+        'red': 0,
+        'green': 1,
+        'blue': 2,
+        'gray': 3
+    }
 
     // ============ STATE
     const [activeColor, setActiveColor] = useState(-1)
@@ -74,7 +80,6 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         setActiveCard(-1)
         setActiveValue(-1)
     }
-
     // append card to top-level app inventory
     useEffect(() => {
         // Random Joker
@@ -94,7 +99,10 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
                 newCard = { ...BLUE_CARDS[activeCard] }
             }
             newCard.value = activeValue
-            onInventoryChange(inventory.concat([newCard]))
+            onInventoryChange(
+                inventory.concat([newCard])
+                    .sort((a, b) => SORT_ORDER[a.color] - SORT_ORDER[b.color]))
+
             resetState()
         }
     }, [activeCard, activeValue])

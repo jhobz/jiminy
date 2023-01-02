@@ -7,13 +7,13 @@ import { createRoot } from 'react-dom/client'
 import { createHashRouter, RouterProvider, Navigate, Link } from 'react-router-dom'
 
 const DEFAULT_INVENTORY: CardProps[] = [
+    { color: 'red', name: 'sleeping', value: 4 },
     { color: 'red', name: 'feeble', value: 5 },
     { color: 'green', name: 'meeting', value: 6 },
     { color: 'blue', name: 'moments', value: 1 },
     { color: 'gray', name: 'joker' },
     { color: 'gray', name: 'joker' },
     { color: 'gray', name: 'joker' },
-    { color: 'red', name: 'sleeping', value: 4 }
 ] || []
 
 const App = () => {
