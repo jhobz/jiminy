@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import CardContainer from './CardContainer'
 import { CardProps } from './Card'
 import './FarmingPage.css'
@@ -100,6 +101,8 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
 
     return (
     <div className="FarmingPage">
+        <Link to='/'>{'< '}Back</Link>
+        <h1>Farming</h1>
         <Goals inventory={inventory} />
         <CardContainer
             activeIndex={activeColor}
