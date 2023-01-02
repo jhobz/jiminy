@@ -1,8 +1,21 @@
 .CardContainer {
-    display: flex;
+    --grid-layout-gap: 10px;
+    --grid-column-count: 10;
+    --grid-item--min-width: 80px;
+
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    gap: var(--grid-layout-gap);
+    justify-content: center;
+    padding: 1em;
+    /* display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; */
 }
