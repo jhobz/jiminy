@@ -8,12 +8,12 @@ interface PropTypes {
   onActiveIndexChange?: Function
 }
 
-export default function CardContainer({ cards, activeIndex, onActiveIndexChange: setActive }: PropTypes) {
+export default function CardContainer({ cards, activeIndex, onActiveIndexChange = () => {} }: PropTypes) {
   const listItems = cards.map((card, index) =>
     <Card
         key={index}
         {...card}
-        onClick={() => setActive(index)}/>
+        onClick={() => onActiveIndexChange(index)}/>
   )
 
   return (

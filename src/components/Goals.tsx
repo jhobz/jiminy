@@ -70,8 +70,6 @@ export default function Goals({ inventory }: PropTypes) {
         (filter.value !== undefined ? card.value === filter.value : true)
     })
 
-    console.log(filteredCards)
-
     if (goal.target.count !== undefined) {
       if (filteredCards.length >= goal.target.count) {
         updateGoal(index, true)

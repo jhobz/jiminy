@@ -2,7 +2,7 @@ import './Card.css'
 
 export interface CardProps {
     name: string
-    color: string
+    color: 'red' | 'green' | 'blue' | 'gray'
     onClick?: Function
     value?: number
     frame?: boolean
