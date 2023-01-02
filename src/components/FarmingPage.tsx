@@ -64,10 +64,16 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         { name: '9', color: 'red', frame: false, value: 9 },
     ]
     const SORT_ORDER = {
-        'red': 0,
-        'green': 1,
-        'blue': 2,
-        'gray': 3
+        color: {
+            'red': 0,
+            'green': 1,
+            'blue': 2,
+            'gray': 3
+        },
+        name: {
+            'tranquil': 0,
+            'teeming': 1,
+        },
     }
 
     // ============ STATE
@@ -101,7 +107,13 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
             newCard.value = activeValue
             onInventoryChange(
                 inventory.concat([newCard])
-                    .sort((a, b) => SORT_ORDER[a.color] - SORT_ORDER[b.color]))
+                    .sort((a, b) => {
+                        if (a.color !== b.color)
+                            return SORT_ORDER.color[a.color] - SORT_ORDER.color[b.color]
+                        if (a.name !== b.name)
+                            return SORT_ORDER.name[a.name] - SORT_ORDER.name[b.name]
+                        return a.value - b.value
+                    }))
 
             resetState()
         }
