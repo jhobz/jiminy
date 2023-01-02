@@ -1,0 +1,46 @@
+.RoomContainer {
+    display: flex;
+}
+
+.RoomContainer > div {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.current_room {
+    flex: 1 0;
+}
+
+.floor_map {
+    flex: 3 0;
+    display: grid;
+    grid-template-columns: 5em 5em 5em;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". north ."
+        "west . east"
+        ". south .";
+    justify-content: center;
+    padding: 2em;
+}
+
+.direction.north {
+    grid-area: north;
+}
+
+.direction.south {
+    grid-area: south;
+}
+
+.direction.east {
+    grid-area: east;
+}
+
+.direction.west {
+    grid-area: west;
+}
+
+.next_room {
+    --grid-column-count: 3;
+    flex: 3 0;
+}
