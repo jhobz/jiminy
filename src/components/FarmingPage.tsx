@@ -13,10 +13,10 @@ interface PropTypes {
 export default function FarmingPage({ inventory, onInventoryChange }: PropTypes) {
     // ============ CARDS
     const CARD_COLORS: CardProps[] = [
-        { name: 'red', color: 'red' },
-        { name: 'green', color: 'green' },
-        { name: 'blue', color: 'blue' },
-        { name: 'other', color: 'gray' },
+        { name: 'frame', color: 'red', frame: false },
+        { name: 'frame', color: 'green', frame: false },
+        { name: 'frame', color: 'blue', frame: false },
+        { name: 'frame', color: 'gray', frame: false },
     ]
     const RED_CARDS: CardProps[] = [
         { name: 'almighty', color: 'red' },
@@ -52,16 +52,16 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
         { name: 'joker', color: 'gray' },
     ]
     const CARD_VALUES: CardProps[] = [
-        { name: '0', color: 'red', frame: false, value: 0 },
-        { name: '1', color: 'red', frame: false, value: 1 },
-        { name: '2', color: 'red', frame: false, value: 2 },
-        { name: '3', color: 'red', frame: false, value: 3 },
-        { name: '4', color: 'red', frame: false, value: 4 },
-        { name: '5', color: 'red', frame: false, value: 5 },
-        { name: '6', color: 'red', frame: false, value: 6 },
-        { name: '7', color: 'red', frame: false, value: 7 },
-        { name: '8', color: 'red', frame: false, value: 8 },
-        { name: '9', color: 'red', frame: false, value: 9 },
+        { name: 'frame', color: 'gray', frame: false, value: 0 },
+        { name: 'frame', color: 'gray', frame: false, value: 1 },
+        { name: 'frame', color: 'gray', frame: false, value: 2 },
+        { name: 'frame', color: 'gray', frame: false, value: 3 },
+        { name: 'frame', color: 'gray', frame: false, value: 4 },
+        { name: 'frame', color: 'gray', frame: false, value: 5 },
+        { name: 'frame', color: 'gray', frame: false, value: 6 },
+        { name: 'frame', color: 'gray', frame: false, value: 7 },
+        { name: 'frame', color: 'gray', frame: false, value: 8 },
+        { name: 'frame', color: 'gray', frame: false, value: 9 },
     ]
     const SORT_ORDER = {
         color: {
@@ -96,6 +96,7 @@ export default function FarmingPage({ inventory, onInventoryChange }: PropTypes)
             'mingling': 4,
             'moogle': 5,
             'joker': 0,
+            'frame': -1
         },
     }
 

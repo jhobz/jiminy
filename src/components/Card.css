@@ -12,35 +12,40 @@
 
 .Card > .card-value {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    font-style: italic;
+    font-size: 180%;
+    line-height: 1.8em;
+    bottom: 4%;
+    right: 10%;
+    width: 35%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Card[data-frame="true"].Card[data-color="red"] {
+.Card[data-color="red"] {
     background-color: red;
 }
-.Card[data-frame="true"].Card[data-color="green"] {
+.Card[data-color="green"] {
     background-color: green;
 }
-.Card[data-frame="true"].Card[data-color="blue"] {
+.Card[data-color="blue"] {
     background-color: blue;
 }
-.Card[data-frame="true"].Card[data-color="gray"] {
+.Card[data-color="gray"] {
     background-color: gray;
 }
 
-.Card[data-frame="false"] {
-    background-color: transparent;
-    color: black;
+.Card[data-frame="false"] .card-title {
+    display: none;
 }
 
 .Card[data-frame="false"] > .card-value {
-    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 /* -- RED CARDS -- */
