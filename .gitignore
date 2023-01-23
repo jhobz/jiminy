@@ -87,3 +87,7 @@ typings/
 
 # Electron-Forge
 out/
+
+# Google API credentials
+credentials.json
+token.json
