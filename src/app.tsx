@@ -1,5 +1,5 @@
 import './index.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FarmingPage from './components/FarmingPage'
 import InventoryPage from './components/InventoryPage'
 import { CardProps } from './components/Card'
@@ -18,11 +18,16 @@ const DEFAULT_INVENTORY: CardProps[] = [
 
 const App = () => {
     const [inventory, setInventory] = useState(DEFAULT_INVENTORY as CardProps[])
+    const [currentRoom, setCurrentRoom] = useState({ floor: 0, room: 0 })
 
     const router = createHashRouter([
         {
             path: '/',
-            element: <InventoryPage inventory={inventory} onInventoryChange={setInventory} />,
+            element: <InventoryPage
+                inventory={inventory}
+                onInventoryChange={setInventory}
+                room={currentRoom} />,
+                // nextRoom={getNextRoom(currentRoom)} />,
         },
         {
             path: '/farming',
@@ -33,6 +38,14 @@ const App = () => {
             element: <Navigate to='/' />
         }
     ])
+
+    // const getNextRoom = (room) => {
+
+    // }
+
+    // useEffect(() => {
+
+    // }, [inventory])
 
     return (
         <div className="app-container">

@@ -6,29 +6,21 @@ import CardContainer from './CardContainer'
 import './RoomContainer.css'
 
 interface PropTypes {
-
+    room: { floor: number, room: number }
 }
 
-// async function getTimingData(auth: any): Promise<string[][]> | null {
-//     return [['']]
-//     // const sheets = google.sheets({version: 'v4', auth})
-//     // const res = await sheets.spreadsheets.values.get({
-//     //     // spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms', // Sample sheet
-//     //     spreadsheetId: '14e1Om4S056S15-wE1McW171Opv5URELAC8sMu4YS6qs', // Master timing data sheet for map cards
-//     //     range: 'DATA!D3:S146',
-//     // })
+interface FloorRoute {
+    KoB?: string[]
+    KoG?: string[]
+    KtT?: string[]
+    '3+'?: string[]
+    '<3'?: string[]
+}
 
-//     // const rows = res.data.values
-//     // if (!rows || rows.length === 0) {
-//     //     console.log('No data found.')
-//     //     return
-//     // }
-
-//     // return rows
-// }
-
-export default function RoomContainer({}: PropTypes) {
+export default function RoomContainer({ room }: PropTypes) {
     let GSheetsOAuthClient: any
+    let routeData: FloorRoute[]
+
     // @ts-ignore global
     window.electron.onMessage('GSheetsAuth', (client: any) => {
         if (client) {
@@ -49,17 +41,17 @@ export default function RoomContainer({}: PropTypes) {
         })
     })
     // @ts-ignore global
-    window.electron.onMessage('getRouteData', (routeData: any) => {
+    window.electron.onMessage('getRouteData', (data: FloorRoute[]) => {
         console.log('Data from spreadsheet:')
         console.log(routeData)
+        routeData = data
     })
 
-    const room = 'Floor 1 - OC - Room 1'
     return (
         <div className="RoomContainer">
             <div className="current_room">
                 <h3>Current Room</h3>
-                <p className="room-name">{room}</p>
+                <p className="room-name">{`Floor ${room.floor + 1} - Room ${room.room + 1}`}</p>
                 <CardContainer cards={[{name: 'feeble', color: 'red', value: 9}]} />
             </div>
             <div className="floor_map">
@@ -78,7 +70,7 @@ export default function RoomContainer({}: PropTypes) {
             </div>
             <div className="next_room">
                 <h3>Next Room</h3>
-                <p className="room-name">{room}</p>
+                <p className="room-name">{`next room`}</p>
                 <CardContainer cards={[{name: 'feeble', color: 'red', value: 9},{name: 'feeble', color: 'red', value: 9},{name: 'feeble', color: 'red', value: 9}]} />
             </div>
         </div>
