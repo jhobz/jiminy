@@ -73,7 +73,7 @@ export async function getTimingData(auth: OAuth2Client): Promise<string[][]> | n
     const res = await sheets.spreadsheets.values.get({
         // spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms', // Sample sheet
         spreadsheetId: '14e1Om4S056S15-wE1McW171Opv5URELAC8sMu4YS6qs', // Master timing data sheet for map cards
-        range: 'DATA!D3:S146',
+        range: 'TIMING_DATA!D3:S146',
     })
 
     const rows = res.data.values

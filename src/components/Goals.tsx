@@ -28,6 +28,24 @@ export default function Goals({ inventory }: PropTypes) {
       }
     },
     {
+      name: '3 Moogles',
+      filter: {
+        name: 'moogle',
+      } as CardProps,
+      target: {
+        count: 3
+      }
+    },
+    {
+      name: '6 Blues',
+      filter: {
+        color: 'blue',
+      } as CardProps,
+      target: {
+        count: 6
+      }
+    },
+    {
       name: 'Red 3',
       filter: {
         color: 'red',
@@ -35,15 +53,6 @@ export default function Goals({ inventory }: PropTypes) {
       } as CardProps,
       target: {
         count: 1
-      }
-    },
-    {
-      name: 'Red >=15',
-      filter: {
-        color: 'red',
-      } as CardProps,
-      target: {
-        sum: 15
       }
     },
     {
