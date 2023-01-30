@@ -19,7 +19,7 @@ export default function InventoryPage({ inventory, onInventoryChange }: PropType
         <div>
             <Link to='/farming'>Farming</Link>
             <h1>Home</h1>
-            {/* <RoomContainer /> */}
+            <RoomContainer />
             <div className='inventory-container'>
                 <CardContainer cards={inventory} onActiveIndexChange={onClick} />
             </div>

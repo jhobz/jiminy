@@ -48,6 +48,17 @@ export default function RoomContainer({}: PropTypes) {
             console.log(out)
         })
     })
+    // @ts-ignore global
+    window.electron.onMessage('getRouteData', (rows: string[][]) => {
+        console.log('Data from spreadsheet:')
+        rows.forEach((row) => {
+            let out = ''
+            row.forEach((col) => {
+                out += `${col}, `
+            })
+            console.log(out)
+        })
+    })
 
     const room = 'Floor 1 - OC - Room 1'
     return (
@@ -65,7 +76,11 @@ export default function RoomContainer({}: PropTypes) {
                         // @ts-ignore global
                         window.electron.sendMessage('getTimingData')
                     }} >E</button>
-                <button className="direction west">W</button>
+                <button className="direction west"
+                    onClick={ () => {
+                        // @ts-ignore global
+                        window.electron.sendMessage('getRouteData')
+                    }} >W</button>
             </div>
             <div className="next_room">
                 <h3>Next Room</h3>

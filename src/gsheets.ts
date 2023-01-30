@@ -14,6 +14,7 @@ const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 // time.
 const TOKEN_PATH = path.join(process.cwd(), 'token.json')
 const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json')
+const SPREADSHEET_ID = '14e1Om4S056S15-wE1McW171Opv5URELAC8sMu4YS6qs'
 
 /**
  * Reads previously authorized credentials from the save file.
@@ -68,12 +69,11 @@ export async function authorize() {
     return client
 }
 
-export async function getTimingData(auth: OAuth2Client): Promise<string[][]> | null {
+export async function getSheetData(auth: OAuth2Client, range: string): Promise<string[][]> | null {
     const sheets = google.sheets({version: 'v4', auth})
     const res = await sheets.spreadsheets.values.get({
-        // spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms', // Sample sheet
-        spreadsheetId: '14e1Om4S056S15-wE1McW171Opv5URELAC8sMu4YS6qs', // Master timing data sheet for map cards
-        range: 'TIMING_DATA!D3:S146',
+        spreadsheetId: SPREADSHEET_ID, // Master timing data sheet for map cards
+        range,
     })
 
     const rows = res.data.values
@@ -85,4 +85,10 @@ export async function getTimingData(auth: OAuth2Client): Promise<string[][]> | n
     return rows
 }
 
-// export function gtest() { authorize().then(listMajors).catch(console.error) }
+export async function getTimingData(auth: OAuth2Client) {
+    return getSheetData(auth, 'TIMING_DATA!D3:S146')
+}
+
+export async function getRouteData(auth: OAuth2Client) {
+    return getSheetData(auth, 'ROUTE_DATA!A2:O35')
+}
