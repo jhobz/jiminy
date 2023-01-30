@@ -49,15 +49,9 @@ export default function RoomContainer({}: PropTypes) {
         })
     })
     // @ts-ignore global
-    window.electron.onMessage('getRouteData', (rows: string[][]) => {
+    window.electron.onMessage('getRouteData', (routeData: any) => {
         console.log('Data from spreadsheet:')
-        rows.forEach((row) => {
-            let out = ''
-            row.forEach((col) => {
-                out += `${col}, `
-            })
-            console.log(out)
-        })
+        console.log(routeData)
     })
 
     const room = 'Floor 1 - OC - Room 1'

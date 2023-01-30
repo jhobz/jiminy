@@ -7,6 +7,10 @@ import { OAuth2Client } from 'google-auth-library'
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
 
+interface FloorData {
+  [key: string]: string[]
+}
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit()
@@ -75,6 +79,22 @@ ipcMain.on('getTimingData', () => {
 
 ipcMain.on('getRouteData', () => {
   getRouteData(GSheetsOAuth).then((data: string[][]) => {
-    mainWindow.webContents.send('getRouteData', data) 
+    let routeData: FloorData[] = []
+    data.forEach((row, index) => {
+      const floor = Number(row[0])
+      if (floor === 10) {
+        routeData[9] = {}
+        return
+      }
+
+      if (routeData.length >= floor) {
+        routeData[floor - 1][row[1]] = row.slice(2)
+        return
+      }
+
+      routeData.push({ [row[1]]: row.slice(2) })
+    })
+
+    mainWindow.webContents.send('getRouteData', routeData)
   })
 })
